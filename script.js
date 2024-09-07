@@ -170,7 +170,7 @@ $(document).ready(function () {
 
   function createEngine(engineType) {
     if (engineType === "stockfish") {
-      let stockfishEngine = new Worker("libs/stockfish-nnue-16-single.js");
+      let stockfishEngine = new Worker("stockfish-nnue-16-single.js");
       stockfishEngine.postMessage("uci");
       stockfishEngine.postMessage(
         `setoption name UCI_Elo value ${engineElo}`
