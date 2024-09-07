@@ -1,0 +1,211 @@
+/* styles.css */
+
+body {
+  background-color: #212529; /* Dark background color */
+  font-family: 'Open Sans', sans-serif;
+  color: #e9ecef; /* Light text color */
+  overflow-y: scroll;
+}
+
+/* ===================================
+   General Styles 
+=================================== */
+
+.container-fluid {
+  padding-top: 20px; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+  color: #ffc107; /* Yellow headings */
+}
+
+/* ===================================
+    Board and Analysis Tab Styles 
+=================================== */
+
+#board-container, #board-container-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  max-width: 900px;
+  margin: 20px auto; 
+  text-align: center; 
+  padding: 20px; /* Add padding to the container */
+  background-color: #282c34; /* Darker gray background for board area */
+  border-radius: 10px; /* Rounded corners for board area */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Chessboard Styling (adjust borders as needed) */
+#board, #board-review {
+  border: 4px solid #495057; /* Dark gray border */ 
+}
+
+/* Evaluation Bar */
+#eval-bar, #eval-bar-review {
+  width: 250px; 
+  height: 40px; 
+  background-color: #343a40; 
+  margin: 10px 0;
+  border: none; 
+  border-radius: 20px; 
+  position: relative;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+#eval-bar-inner, #eval-bar-review-inner {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 18px;
+}
+
+/* Positive evaluation - Green gradient */
+#eval-bar-inner { 
+  background-image: linear-gradient(to right, #28a745, #4caf50); 
+}
+
+/* Negative evaluation - Red gradient */
+#eval-bar-review-inner { 
+  background-image: linear-gradient(to right, #dc3545, #f44336);
+}
+
+#eval-text, #eval-text-review {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px; 
+}
+
+/* ===================================
+    Move List Styles (Both Tabs)
+=================================== */
+
+#move-list, #move-list-review {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  background-color: #212529; 
+  border: 1px solid #495057; 
+  border-radius: 8px; 
+  padding: 10px; 
+}
+
+#move-list li, #move-list-review li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #495057; 
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.2s ease; 
+}
+
+#move-list li:hover, #move-list-review li:hover {
+  background-color: #343a40; 
+  color: #ffc107; 
+}
+
+#move-list li.even-move, 
+#move-list-review li.even-move {
+  background-color: #343a40; 
+}
+
+#move-list .move, 
+#move-list-review .move {
+  font-size: 18px; 
+}
+
+#opening-name, #opening-name-review {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* ===================================
+    Explorer Tab Styles 
+=================================== */
+
+#explorer .container {
+  margin-top: 20px; 
+  padding: 20px; /* Add padding to the explorer container */
+  background-color: #282c34; /* Darker background for explorer area */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Explorer Tab - Win/Loss Bars */
+.win-loss-bar {
+  width: 100%;
+  height: 15px; /* Make the bars a bit thicker */
+  background-color: #495057; /* Darker gray background for the bar */
+  border-radius: 8px; /* Rounded corners for the bar */
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.win-bar {
+  height: 100%;
+  background-color: #28a745; /* Green for wins */
+  float: left;
+}
+
+.draw-bar {
+  height: 100%;
+  background-color: #6c757d; /* Gray for draws */
+  float: left;
+}
+
+.loss-bar {
+  height: 100%;
+  background-color: #dc3545; /* Red for losses */
+  float: left;
+}
+
+
+/* ===================================
+    Review Tab Styles 
+=================================== */
+
+#review-game-btn {
+  width: 100%; 
+}
+
+#move-classification-text {
+  margin-top: 10px;
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+/* Progress Bar (Review Tab) */
+.progress {
+  background-color: #495057; /* Darker gray background */
+  border-radius: 10px;
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: #007bff; 
+  border-radius: 8px;
+  transition: width 0.6s ease;
+}
+
+/* ===================================
+   Board Size Adjustment 
+=================================== */
+
+#board-container #board,
+#board-container-review #board-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+
+  margin: 20px auto; 
+  text-align: center; 
+  width: 900px; /* Adjust board size as needed */
+  height: 900px; /* Adjust board size as needed */
+}
